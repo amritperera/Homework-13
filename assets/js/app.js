@@ -71,6 +71,15 @@ d3.csv("assets/data/data.csv")
     .attr("r", "11")
     .attr("fill", "blue")
     .attr("opacity", ".5");
+    
+    chartGroup.append("text")
+    .data(stateData)
+    .style("fill", "white")
+    .attr('x',d => xLinearScale(d.poverty))
+    .attr('y',d => yLinearScale(d.healthcare))
+    .attr("dy", ".35em") 
+    .attr("text-anchor", "middle")
+    .text(d => d.abbr);
 
     // chartGroup.append("text")
     // .attr("dx",function(d){return -1})
